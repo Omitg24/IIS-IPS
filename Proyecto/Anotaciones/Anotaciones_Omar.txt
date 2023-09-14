@@ -1,0 +1,91 @@
+Anotaciones
+Sprint 1:
+	- Gestion de actividades COIIPA.
+	- El colegio es la asociación privada que se rige por un consejo público, asesorar a sus colegiados.
+	En este caso es un colegio de ingenieros informáticos.
+	- Para ser colegiado ha de tener la profesión de ingeniería informatica, licenciado en informatica,
+	titulado en ingeniería informática o aquellos que tienen Grado+Master (no vale en videojuegos, 
+	master universitario oficial).
+	- El proceso de colegiación, una persona cubre un formulario donde introduce sus datos, 
+	se le solicitan datos sobre su titulación, se envía al ministerio de educación, 
+	donde se encuentra una lista de titulos (Base de Datos) que comprueba si dicha persona
+	tiene la licenciatura o viceversa.
+	- El colegiado tiene asignado un número de orden. Orden de creación (El primero tiene 00, por ejemplo).
+	- Un precolegiado es una persona que aún no tiene la titulación de acceso (estudiante), pero que la está estudiando.
+	- El proceso de precolegiación es el mismo, salvando que se debe pasar la titulación correspondiente 
+	y adjuntar algo que lo demuestre. Orden de creación (similar al de colegiado, pero debe de seguir otro tipo de signatura).
+	- Se espera del producto que permita el control absoluto de la gestión de los colegiados y precolegiados.
+	-- EJEMPLOS COMO: Dar de baja, cancelar, sacar listado de ellos, etc...
+	- El colegio, ofrece actividades formativas, tales como cursos, reciclaje, nuevas tecnologías, etc.
+	- La mayoría de los cursos son universales, algunos son reservados para colegiados y precolegiados.
+	- La planificación de los cursos se realiza a principio de año, se planifica el tipo de curso, 
+	duración, cuota (si es única o va en colectivos), que puede haber una cuota única, o una para 
+	precolegiados y otra para colegiados, etc.
+	Hay una fecha normativa, y el número de plazos. También se permite hacer un curso fuera de ese plazo.
+	- El producto ha de ofrecer la gestión de estos cursos.
+	- Los cursos se imparten y se cierran.
+	- El producto debe contener la gestión de aquellas personas que vayan a participar en un curso.
+	- Se debe notificar a los participantes con recibos acerca de los cursos, a su vez, 
+	se debe dar la opción de la cancelación de éstos, se espera que facilite o asista al usuario 
+	(colegio) para que ésto sea más sencillo.
+	- Se debe permitir la gestion de eventos, tales como jornadas, reuniones, etc...
+	- A parte de las activdades formativas, esta la parte de actividades profesionales, todo colegio oficial, 
+	tiene que, a principios de año, enviar a la administración de justicia, la solicitud frente a los peritos 
+	judiciales para solicitar un informe judicial. Debe de enviar un fax a varios sitios.
+	- A finales de año, se debe formar la lista de peritos judiciales, que se debe de enviar a la administración de justicia. 
+	Luego ya, se desentiende (pasa a gestionarse por la administración).
+	- Hay otra lista, que es la de peritos privados, no es requerida por nadie. Se solicita individualmente la revisión.
+	- El perito hhace la revisión y se queda en el propio colegio.
+	- El funcionamiento de la lista es mediante la informacion de los peritos, que se inscriben y van 
+	siendo llamados para realizar su trabajo, es una lista circular.
+	- La lista se renueva anualmente, a final de año se realiza el control sobre los que quieren renovar, cancelar, o unirse.
+	- Hay que mantener el turno de asignación profesional en base a las solicitudes que van llegando.
+	- Un precolegiado pierde su asignación si no cumple varios requisitos, no cumple cuotas, etc.
+Sprint 2:
+	- Gestion de cursos cambia a cuotas por colectivos (colegiados, precolegiados, estudiantes, otros)
+	- Diferentes sesiones, paso de fecha a sesión, calendario de sesiones de ese curso.
+	- Asignar el profesorado al curso.
+	- Los cursos pueden tener cuota base, no por colectivos.
+	- Las inscripciones pasan de ser a colegiados y precolegiados, a cualquier solicitante que pueda acceder al curso (basandose en las cuotas por colectivos)
+	- Permitir enviar lotes de solicitudes de colegiación al ministerio y su recepción:
+		* Ejemplo: El envío se simula mediante el secretario va a tener solicitudes de personas, y genera un lote que envia al ministerio 
+				   con todas las solicitudes, basicamente un fichero de intercambio con el ministerio, en cada 
+				   una solicitud, dni y nombre de la persona. 
+				   La recepción se simula con un fichero de vuelta (en el mismo formato), debe de contener el dni, nombre,
+				   lista de titulaciones de esa persona.
+				   Si cumple los requisitos de titulacion, pasará a ser colegiado o precolegiado, titulaciones (Licenciado en informática, 
+				   titulado en informatica o máster en ingeniería informatica)
+	- Cuando nos inscribíamos a un curso teniamos dos maneras, por transferencia o tarjeta, por transferencia se guardaba la plaza si las había, 
+	se debe de comprobar si se han hecho los pagos, debe de comprobarse que en las 48 siguientes se ha hecho el pago. Se debe pedir al banco que nos de
+	una lista de movimientos de la cuenta, solicitar un fichero en formato bancario. Para comprobar, solicitar al banco, formato csv, debe contener
+	dni, nombre, cantidad pagada, fecha.
+	Si a las 48 no ha hecho el pago (comprobación mediante fecha) quedará como anulado, y debe realizarsele la devolución, queda pendiente el pago, 
+	guardar en un campo.
+	Si la cantidad es menor a lo que se debe de pagar, queda como cancelado y se debe devolver el dinero.
+	Si el dni no está en el fichero (no ha hecho el pago), se cancela la inscripcion.
+	- Inscripcion en listas profesionales para peritos, privados y judiciales. De momento privados, las listas se renuevan anualmente (a principios de año),
+	se solicita a todos los colegiados si se quieren inscribir en las listas, pueden darse dos casos, darse de alta (alguien que nunca ha estado en las listas), 
+	se le muestran sus datos personales, para verificar, si todo esta correcto, se inscribe al final de la lista.
+	Para las de renovación, se le muestran los datos, verifica y se mantiene en la posición en la que estaba.
+	- Habilitar procedimiento de recepción de periciales y asignación a peritos.
+		* Ejemplo: cualquier persona puede solicitar servicios de peritos, debe rellenar un formulario basico, nombre, datos de contacto, correo, dni 
+		y descripción de lo que quiere hacer, cualificación obligatoria de si es urgente o normal.
+		Esas solicitudes pendientes se mandan a un perito, para ello se tiene la lista de peritos, se va contactando según el orden de la lista, si
+		el perito dice que si, dicha pericial lo hará el perito que la ha aceptado, si dice que no, se pasa al siguiente.
+Sprint 3:
+	- En las asignaciones periciales se asignaba una solicitud a un perito, y quedaba como asignada. 
+	Ahora puede darse el caso de que esa pericial no se realice, por falta de presupuesto, requisitos técnicos, etc.
+	Cuando no se realiza debe de quedar notificado, pero ese proceso debe de guardarse, fechas, etc.
+	- Se debe poder cancelar una inscripcion al curso, para ello debe tener la posibilidad de que sea cancelable, en caso de serlo, se debe expresar la política de devolución, cuanto se devuelve, etc.
+	- Lista de espera a los cursos, en caso de no haber plazas, debe  de añadirsele a la lista, no se le debe dejar pagar y debe informársele por mensaje, se debe proporcionar un medio para ver la lista de inscritos y lista en espera.
+	- Los cursos también deben de poder ser cancelados por el COIIPA, en base al ritmo de inscripciones.
+	Esto implica que el curso no admita más inscripciones, y todos los inscritos y preinscritos también se cancelarían, 
+	en caso de haber abonado la cantidad se debe anotar la devolución.
+	- Visados, darle una calificación, basandose en ciertos requisitos, para visar proyectos, deben de hacerlo los peritos.
+	El perito hace una solicitud de visar, debe aportarse una breve descripción del informe que se debe visar.
+	Esta solicitud deben revisarla los mismos peritos que están en la lista de peritos (uno mismo no puede).
+    - Darse de baja como colegiado, hay un formulario de bajas, donde se indica el nº de colegiado, 
+	debe de indicarse una descripción del motivo (obligatorio), no es automatico, se realiza internamente, 
+	no se borra el nº de colegiado, queda en estado de baja, aunque hay que eliminarla de distinas listas 
+	(peritos, visadores, recibos), justificante de baja, debe de mostrarse la cantidad de dinero que adeuda
+	en formato de cuotas, en caso de devolver.

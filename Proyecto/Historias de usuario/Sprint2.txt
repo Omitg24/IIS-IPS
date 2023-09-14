@@ -1,0 +1,29 @@
+Historias de usuario:
+	Sprint 2:
+		- Como colegiado/pre-colegiado pre-inscrito en un curso de formación quiero realizar el pago del curso:
+			El pago de un curso puede realizarse por tarjeta bancaria o transferencia, en ambos casos, se dispone de dos días contados a partir de la fecha de preinscripción, para el caso de pago con tarjeta bancaria, se simula la conexión con el banco proporcionando el número de tarjeta y la fecha de caducidad, quedando inscrito (o pagado).			
+			
+		- Como secretaría administrativa quiero realizar una consulta al ministerio para conocer la titulación de un solicitante de ingreso para proceder al alta inmediato en el COIIPA:
+			A partir de la lista de solicitudes de alta de colegiados,, se seleccionará uno para comprobar su titulación. La respuesta podrá ser una para los siguientes: 0 (Sin titulación), 1 (Titulación en Ingeniería Informática), 2 (Otras titulaciones). En caso de ser 1,, el solicitante pasa a ser colegiado del COIIPA a todos los efectos, asignándole como número de colegiado aaaa-nnnn, donde aaaa es el año actual y nnnn es el número natural inmediatamente superior al último colegiado.
+			
+		- Como colegiado quiero inscribirme como perito privado para poder realizar informes periciales:
+			Se debe de mostrar al colegiado una sección con sus datos personales, donde éste deberá verificar si éstos son correctos, una vez verificados, se distinguen dos casos de uso:
+			En el caso de que el colegiado no esté previamente inscrito, se pasará su inscripción a la lista en el último turno.
+			En el caso de que el colegiado esté previamente inscrito, se mantendrá su turno en la lista.
+		
+		- Como secretaria administrativa quiero asignar solicitudes periciales a los peritos para que puedan cumplir la función asignada:
+			Se debe mostrar una lista de las solicitudes no asignadas y otra lista con los peritos que no tienen asignación, se llamará al perito con turno más prioritario para preguntar sobre su disponibilidad, en caso de que éste acepte se le asignará el informe y se eliminarán ambos de sus respectivas listas (NO ES IMPLEMENTACIÓN AUTOMATICA).
+			En caso contrario, se repetirá la acción con el siguiente perito más prioritario, y así respectivamente.
+			
+		- Como entidad quiero poder solicitar un informe pericial para realizar la tarea solicitada:
+			Para realizar la solicitud se deberá proporcionar el nombre de la persona o entidad, datos de contacto, correo, dni y descripción de lo que se quiere hacer, también debe existir la opción de selección sobre la urgencia del informe (urgente o normal).
+			
+		- Como secretaria administrativa quiero poder consolidar los pagos por transferencia para poder inscribir al solicitante al curso:
+			Se mostrará una lista con los inscritos en estado de preinscripción por cada curso y se tenga la opción de actualizar estado, donde, al presionar, se acceca al fichero del banco por cada curso (dni, persona, nombre, cantidad abonada, fecha) y se actualice el estado de estos, haciendo las siguiente comprobaciones:
+			Si a las 48 no ha hecho el pago (comprobación mediante fecha) quedará como anulado, y debe realizarsele la devolución, queda pendiente el pago, guardar en un campo.
+			Si la cantidad es menor a lo que se debe de pagar, queda como cancelado y se debe devolver el dinero.
+			Si el dni no está en el fichero (no ha hecho el pago), se cancela la inscripcion.	
+			
+		- Como secretaria administrativa quiero poder enviar lotes de solicitudes al ministerio y recepcionarlos para completar el proceso de colegiación:
+			Se mostrara un listado de las solicitudes de colegiación, y se dispondrá de un botón que permita generar un fichero csv con (dni, nombre) para enviar al ministerio.
+			El fichero de recepción contendrá además de los campos anteriores una lista con las titulaciones del solicitante, si alguna de ellas es habilitante (Licenciado en informática, titulado en informática o máster en ingeniería informática) se completa el proceso, si no, este pasa a estado Anulado.

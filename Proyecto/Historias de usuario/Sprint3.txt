@@ -1,0 +1,41 @@
+Historias de usuario:
+	Sprint 3:
+		- Como secretaria administrativa quiero poder anular asignaciones periciales para cancelarlas.
+			Se debe guardar el motivo y la fecha de la cancelación y el perito mantendrá su turno asignado.
+		
+		- Como secretaria administrativa quiero poder filtrar la lista de periciales privadas para buscar aquellos que cumplan con los requisitos que me interesan.
+			Se debe poder filtrar aquellas que se han realizado por año, aquellas que no se han realizado y por perito, también deben poder combinarse estos filtros.
+			De estos se tiene que mostrar la descripción del informe, el dni/cif, dni del perito asignado y fecha de la asignación, y por último, si se ha realizado o no.
+		
+		- Como colegiado inscrito a un curso quiero poder cancelar mi inscripción para anular mi asistencia a éste.
+			Para poder cancelar la inscripción a un curso, éste debe de estar planificado como 'Cancelable' (marcado en la planificación del curso).			
+			Debe mostrarse un justificante con la fecha de la cancelación, título del curso (más la fecha de este curso, de cara a distinguir varios cursos con el mismo nombre) y el dinero a devolver.
+			
+		- Como secretaria administrativa quiero poder ver las listas de espera de los cursos para llevar un control de los inscritos a los cursos correspondientes.
+			Se debe mostrar la lista de espera ordenada por prioridad (FIFO, First in - First out).
+			Además, también se debe mostrar la lista de inscritos al curso.
+			
+		- Como colegiado quiero poder entrar en una lista de espera cuando el número/cupo de plazas ya esté lleno en el curso en cuestión para poder acceder posteriormente.
+			Se debe mostrar un mensaje de confirmación de entrada a la lista de espera.
+			Durante el periodo de estancia en la lista de espera no se podrá pagar la inscripción.
+			
+		- Como secretaria administrativa quiero poder planificar un curso como cancelable para que los inscritos a él tenga la posibilidad de anular su inscripción/pre-inscripción.
+			Se debe marcar la opción de que el curso sea cancelable.
+			En caso de marcarse, se debe habilitar un campo donde se especificará la política de devolución a seguir en caso de dicha cancelación (porcentajes del total devuelto).
+		
+		- Como secretaria administrativa quiero poder cancelar cursos para anular su impartición.
+			Se debe mostrar la lista de cursos además, se añadirá un campo de número de inscritos a cada curso.
+			No se deben admitir más inscripciones, y a todos los ya inscritos/pre-inscritos se les anulará la inscripción al curso, a éstos se les deberá anotar la devolución del 100% del total abonado.
+		
+		- Como perito quiero poder visar un informe pericial terminado para darle un sello de calidad.
+			Se mostrará un formulario que el perito deberá rellenar con sus datos correspondientes y además deberá incluir una descripción breve (obligatorio).
+		
+		- Como secretaria administrativa quiero poder asignar un visador para poder calificar (visar) un informe pericial terminado.
+			Se debe mostrar la lista de visadores y la lista de solicitudes de visado (que contendrá aquellas solicitudes realizadas por los peritos para informes periciales terminados).
+			La lista de visadores estará formada por los peritos.
+			No se podrá asignar un visador a la solicitud que él mismo ha realizado.
+		
+		- Como colegiado quiero poder darme de baja en el COIIPA para dejar de tener los privilegios que éste me ofrece.
+			Se debe mostrar un formulario a cubrir para realizar la baja correspondiente, donde se deberá introducir el número de colegiado y el motivo (descripción breve y OBLIGATORIO) de dicha baja.
+			El número de colegiado se guardará (por si en algún futuro quisiera volver a darse de alta, de esta forma quedará en estado de baja), sin embargo, ya no aparecerá ni podrá ejercer como perito y/o visador, ni figurará en la emisión de recibos.
+			Se debe mostrar un justificante de baja, mostrando, en caso de que corresponda, el dinero que éste colegiado adeuda en formato de cuotas.

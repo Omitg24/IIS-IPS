@@ -1,0 +1,108 @@
+Proceso de SCRUM:
+- Se hacen varias columnas, en la primera se ponen todas las historias de usuario.
+- En la segunda se van pasando las de la primera en base a la prioridad de cada una (CURSO)
+- En la tercera se colocan las terminadas (HECHO) 
+Toda la comunicación con el product owner debe realizarse con esta herramienta, NADA DE CORREOS NI NADA.
+
+- Una vez que el product owner envia las prioridades se deben enviar las historias en un plazo de unas 
+  12 horas (-0.5 si no se cumple). Esto en el primer sprint no se aplica.
+
+- En la primera semana del sprint, todas las historias deben estar completamente validadadas (Si no se 
+  hace -0.5 en en la evaluacion continua).
+  
+- En promedio, cada miembro del equipo de desarrollo es responsable de dos historias. Aun así tenemos que estimar nosotros cuanto hacemos en base al tiempo. Por ejemplo, si
+  dos historias son poco, coger una tercera.
+
+  
+Temática del proyecto:
+
+-> Nombre: Gestión de actividades COIIPA (para colegios).
+
+-> Un colegio es una asociación privada cuyo objetivo es defender a sus asociados. En este caso es de ingenieros
+   en informática. Un colegio tiene colegiados, profesionales que tienen ese titulo o esa profesion, es este caso
+   de ingenieros en informatica.
+
+-> Las condiciones para ser colegiado es que tiene que tener la profesion de ingenieria informatica.
+
+-> Títulos que habilitan: Licenciado en informática (antigua, ya no se imparte), grado + máster oficial 
+   en ingeniería informática.
+   
+-> Proceso de colegiacion: Una persona registra sus datos, MUY IMPORTANTE LOS DATOS BANCARIOS, de manera descriptiva 
+   se solicita que titulación se tiene, donde, etc.
+   
+-> Si se tienen unos titulos que habilitan, automaticamente se es colegiado.
+
+-> A cada persona aceptada se le asigna un numero de colegiado.
+
+-> Un precolegiado es una persona que aun no tiene la titulacion que da acceso pero la está cursando.
+   El proceso es lo mismo, solo que ahora ya no indica título. Tan solo piden qué estas estudiando y alguna prueba
+   (matrícula, etc.)
+   
+-> Un precolegiado puede hacer ciertas actividades como ir a cursos, participar en debates, etc.
+   Sin embargo, no pueden votar, asistir asambleas, etc.
+   
+-> El objetivo del producto es que permita la gestión de todos los colegiados y precolegiados, haciendo
+   cosas como sacar cuotas, mostrar listados, etc.
+   
+-> El colegio tambien planifica cursos formativos (para reciclaje, nuevas tecnologías, etc.). Estos cursos no están
+   solo abiertos a colegiados y precolegiados, sino que son universales y están abiertos a todos.
+   
+-> Funcionamiento de los cursos: Se suelen planificar en los primeros meses del año, típicamente en enero.
+   Se va a hacer este curso, que va a tener esta duracion, vamos a cobrar esta cuota que no es unica, va por colectivos (suele haber
+   una diferente por colegiados, precolegiados, etc.), va a haber un determinado numero de plazas y una fecha tentativa (cuando empieza
+   y acaba).
+
+-> La idea es que premita planificar cursos, modificarlos, etc. Se pueden incribir los colectivos a los que esté abiertos, dependiendo
+   de las cuotas, dentro de un periodo determinado. Habra que poderse saber que ha pagado el inscribido, la asistencia de los asistentes, demás.
+   
+-> Se tienen que poder cancelar los cursos en base a si cumplen determinadas condiciones o no. Por ejemplo, si no hay sufiente asistencia, etc.
+
+-> Además de cursos pueden haber conferencias, eventos, etc., solo que estos no se cobran. Se debe poder utilizar la planificacion de cursos de
+   manera genérica para poder realizar otro tipo de actividades, la idea es que no haga falta desarrollar otro producto para hacer estas cosas.
+   
+-> Aparte de las actividades de formación, hay tambien una parte de actividades profesionales. Por obligacion, todo colegio oficial/profesional está obligado 
+   a enviar a (administracion) de justicia peritos judiciales de todos los colegiados.
+   
+-> Para saber si una persona quiere hacer perito judicial a finales del año se solicita a todos los colegiados si quieren hacer perito judicial.
+
+-> Hay otra lista que es la de peritos de parte (privados). Estos no son requeridos por administracion de justicia, sino que estos llegan al colegio.
+   "necesito un perito para verificar que la localizacion de mi movil estaba en x", para entregarlo en juicio, por ejemplo.
+   
+-> Desde el colegio una persona rellena un pequeño formulario con la informacion.
+
+-> Turno de acseo profesional: los peritos que quieran ser accesos de parte se inscriben. Cuando llega una solicitud se asigna al primero de la lista, 
+   y ese pasa al final. Es una lista circular. Por defecto se asignan al primero. Son de elaboración anual, es decir, no son eternas. Al principio del año se solicita
+   a las personas de la lista que renueven, y las que no quieren pasan al final de la lista. Estas listas hay que mantenerlas muy bien, porque pueden por ejemplo mandarnos
+   ya que si ocurre cualquier delito y no estan bin los datos nos pueden acusar de mentir, etc.
+
+-> Resumiendo: 2 tipos de listas, las judiciales, las de parte (hay que mantenerlas, se hacen a final de año, se renuevan, hay que mantener el orden en base a las solicitudes
+   que van llegando, se asignan en base al turno de un perito)
+
+-> Un perito jucidial debe estar al tanto de las cuotas (debe cumplir las condiciones de colectivo).
+
+###### APUNTES SPRINT 2 ######
+
+	- Proceso de validación: Para la primera semana tienen que estar las historias con sus respectivos criterios de aceptación y deben ser validadas por el PO.
+
+	- Ampliación de la planificacion de los cursos, tambien se debe poder establecer no solo el precio unico de la cuota sino que tambien cuotas por diferentes colectivos (colegiados precoleciados estudiantes etc)
+
+	- Tambien vamos a tener la posibilidad de establecer diferentes sesiones (hacer un calendario de sesiones de un curso) asi como asignar profesorado a un curso (ello no quiere decir que un curso solo pueda tener una cuota)
+
+	- Las inscripiciones antes solamente considerabamos colegiado y precolegidos, ahora se pueden hacer desde diferentes colectivos siempre que esos esten contemplados en la planificacion del curso.
+
+	- Se tiene que contemplar la posibilidad de enviar lotes al ministerio. Un lote va a ser un fichero de intercambio con el ministerio (csv, json, txt, etc) y en cada linea va una solicitud de colegiacion (solo dni y nombre).
+	  La recepcion se simula tambien con un fichero de vuelta (solo csv, json o xml; solo puede leerlo la máquina). En el vendran las titulaciones de una persona. Si no tiene ninguna quedaria en un estado 'cancelado'
+	  
+	- Titulaciones que habilitan: Ingeniero en informatica, Licenciado en informatica o Máster en ingenieria informatica
+
+	- Consolidacion de los pagos que se hacian por transferencia: Se comprueba si se han hecho sus pagos. Si alguien se inscribe por transferencia se comprueba en un plazo de 48 horas, hay que pedir al banco una lista
+	  de movimientos de la cuenta (a través de un fichero que sea procesable por la maquina). Este fichero va a tener dni, nombre, cantidad abonada y fecha. Si no se cumple esto el estado de la inscripcion pasa a ser 'anulado', 
+	  pero como pagó se debe devolver la cantidad abonada.
+	   
+	- Inscripcion en listas profesionales para peritos privados. Los peritos privados son aquellos que puede solicitar cualquier persona. Las listas se renuevan anualmente, suele ser a principios de año. La renovacion
+	  consiste en que se solicita a todos los colegiados si se quieren inscribir en las listas. Pueden darse dos escenarios: El alta; una persona que nunca estuvo en las listas quiere darse de alta, practicamente no se
+	  menciona nada porque ya tenemos sus datos, solo se inscribe que quiere darse de alta, se guarda el orden y unos numeros, y renovación; que estan para renovar en un plazo dado.
+	  
+	- Hay que habilitar que sea posible recepcionar periciales y asignacion a peritos. Siempre hay un formulario para cualquier persona donde rellena sus datos, nombre de la empresa, datos de contacto (correo y dni) y hay una
+	  parte en la que indica una breve descripcion de lo que quiere hacer. Adicionalmente hay una cualificacion extrapericial temporal que se puede asignar si es urgente o normal. Se va contactando con el perito por orden
+	  de la lista y se van asignando personas (manualmnte) para hacer las periciales. 

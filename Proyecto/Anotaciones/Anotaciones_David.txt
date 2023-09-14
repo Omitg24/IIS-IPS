@@ -1,0 +1,122 @@
+- Gestión actividades COIIPA
+
+---------------------COLEGIADOS----------------------
+
+- *Colegio*  derecho único, fin: defender colegiados profesión
+- Colegiados, profesionales con titulo. Condiciones: tener profesión ig.informatica (titulos habilitantes : licenciado inf, ing. inf, grado + master ig. inf)
+- Proceseo colegiación, solicitud datos personales, bancarios, cobran cuota, pide titulacion(año,ubi)
+- Envia al ministerio para consultar dni-titulos (consulta manual) 
+- Asigna nº colegiado (año+...+???)
+
+---------------------PRECOLEGIADOS----------------------
+
+- Precolegiados, persona que no tiene titulación pero la cursa (estudiante)
+- Proceso, same pero sin titulo, evidencias matriculación
+- Nº precolegiado
+- Cuota menor y participa ciertas actividades (cursos,debates,etc)
+
+----------------FUNCIONALIDAD------------
+
+- Control y gestión colegiados y precolegiados
+- Alta, baja, modificación
+- Cobrar cuotas, emitir recibos
+- Sacar listados
+
+#####################################################
+
+---------------------COLEGIO------------------
+
+- Planifica cursos
+- Abiertos a todo el mundo prácticamente
+- Jornadas semanales con conferencias
+
+---------------CURSOS---------------------
+
+- Primeros meses de año, por una comisión a petición
+- Duración, cuota (colectivos según criterio), nº plazas, fecha comienzo-fin
+- Ofertas a mitad de año para septiembre
+- Cancelación de cursos, devolver cuotas
+
+- "Eventos con inscripción pero sin cuota"
+
+
+----------------FUNCIONALIDAD------------
+
+- Gestión cursos
+- Calendario curso
+
+------------------INSCRIPCIÓN-------------------
+
+- Apertura y cierre
+- Facilidad
+- Gestionar pagos, justificantes y asistencias
+
+#########################################################
+
+-----------------------FP----------------
+
+- Principios año, enviar justicia de C.A listado colegiados dispuestos a péritos judicales
+- Périto nombrado juez, realiza informe para presentar
+- Se encarga ya la justicia eh
+
+
+---------------------------PERITOS_JUDICIALES---------------------
+
+- Colegiados indican a final de año
+
+---------------------------PERITOS_PRIVADOS---------------------
+
+- Informes sobre un tema, solicitud al colegio
+- Cualquier persona solicita peritos
+- Breve descripción
+
+--------------ASIGNACIÓN---------------------------
+
+- Lista con peritos de parte inscritos
+- Solicitud se asigna al primero de la lista y este pasa al final de la misma
+- Mantenida por el colegio, actualizada
+- El perito puede rechazar
+- Elaboración anual, final de año se renueva (nuevos al final de lista, renovaciones conservan)
+
+
+#####################################################3
+
+-----------------------CUOTAS----------------------
+
+- Recuento de dineros
+
+SPRINT 2:
+	- Planificacion cursos: establecer cuotas por colectivos (colegiados,pre-,otros,...) puede haber una unica 
+	- Establecer sesiones cursos
+	- Asignar profesorado al curso
+	- Inscripciones actividades: considerar mas coletivoss siempre que esten contemplados en la planificacion del curso
+	- Permitir enviar lotes de solicitudes al ministerio y su recepcion. (Personal admin conjunto solicitudes colegiacion, ver pendientes y solicitar comprobar titulo). 
+		Lote fichero intercambio csv, cada linea solicitud(dni, nombre persona de solicitud) envio
+		Recepcion fichero mismo formato, dni, nombre, lista titulaciones. Procesar y titulacion  habilitante(linc, inge,master informatica) se colegia si no, estado cancelado
+	- Consolidar pagos por transferencia inscribir al curso, cuando solicita y paga tiene 48h para pagar en la cuenta del colegio.
+		Solictar fichero en formato bancario al banco, formato csv, (dni persona, nombre, cantidad abonada, fecha) por curso
+		Procesar fichero y cambiar el estado de las inscri
+		Fuera de plazo "Anulado" y devolver dinero, apunte que hay que devolverlo, Incidencias campo
+		Dentro de plazo y cantidad menor, "Cancelado" y devolver el dinero
+		Fecha dentro y cantidad superior, "Confirmado"  y devolver el dinero sobrante
+		Si no hay dni "Anulado"
+		
+	- Inscripcion de peritos privados: solicitar colegiados si quieren inscribirse
+		Colegiado quiere darse de alta, se muestra sus datos personales. Pasa a estar el ultimo de la lista. Turno, numero
+		Colegiado quiere renovar, muestra datos y se inscribe. Mantiene su turno
+	- Procedimiento recepcionar solicitudes periciales y asignacion peritos
+		Cualquier persiona solicita pericial, formulario datos (nombre,contacto,descripcion, cualificacion("Urgente","Normal"))
+		Asignar solicitudes pendientes a peritos. Manualmente
+
+SPRINT 3:
+	- Asignaciones de periciales, puede no realizarse, quedar reflejado (motivo, fecha no se hace, perito asignado mantiene el turno)
+	- Seleccionar listas perciales privadas que se hicieron, no se hicieron por año, por perito. Descripcion, cliente, asignacion, fecha asignacion, realizado o no.
+	- Poder cancelar curso por parte de un isncrito, cuando se planifica marcar cancelable. Si lo es, politica de devolucion(porcentaje dinero se devuelve)
+		- Cancelar curso inscrito, justificante con fecha y curso, se te devueleve x$
+	- Listas de espera cursos, plazas cubiertas puede haber lista de espera, todos los cursos tienen. Mensaje confirmando listas de espera. No puede pagar la inscripción. FIFO
+	- Ver lista de inscritos y lista de espera
+	- Cursos pueden ser cancelados por el COIIPA, lista de cursos, nº inscritos. No admite inscripciones y todos los inscritos se cancelan, si ya abonaron, queda registrado la devolucion del 100%
+	- Visado, sello de calidad, checklist de requisitos. Peritos cuando termina pericial, se visa, formulario con sus datos y despcripcion breve. 
+	- Asignar lista de visadores, 
+	- visadores=peritos
+	- Dar de baja colegiado, formulario de baja (numero de col, motivo(descripcion) Obligatorio) , no peritos, no visadores, no recibo. Dar justificante fecha de baja y la cantidad de dinero que debe si no se emitieron las cuotas.
